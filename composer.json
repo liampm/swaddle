@@ -1,0 +1,24 @@
+{
+    "name": "liampm/swaddle",
+    "description": "Swaddle acts as a wrapper around unknown collections of key-value pairs.",
+    "type": "library",
+    "license": "MIT",
+    "version": "0.1.0",
+    "authors": [
+        {
+            "name": "Liam Morriss",
+            "email": "liam717@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "liampm\\Swaddle\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    }
+}
