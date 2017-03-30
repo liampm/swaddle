@@ -3,7 +3,6 @@
     "description": "Swaddle acts as a wrapper around unknown collections of key-value pairs.",
     "type": "library",
     "license": "MIT",
-    "version": "0.1.0",
     "authors": [
         {
             "name": "Liam Morriss",

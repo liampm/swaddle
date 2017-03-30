@@ -100,6 +100,8 @@ final class Swaddle
             $property = $this->underlying->{$name};
             if ($this->deep && $property instanceof \stdClass) {
                 $property = static::wrapObject($property);
+            } elseif ($this->deep && is_array($property)) {
+                $property = static::wrapArray($property);
             }
             return $property;
         }
