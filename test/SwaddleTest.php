@@ -104,21 +104,6 @@ class SwaddleTest extends TestCase
     }
 
     /**
-     * Test that an array property is converted to a Swaddle when retrieved from a deep Swaddle.
-     *
-     * @covers liampm\Swaddle\Swaddle::getProperty()
-     */
-    public function test_retrieving_array_property_in_deep_swaddle()
-    {
-        $swaddle = Swaddle::wrapArray(['object' => []]);
-
-        $property = $swaddle->getProperty('object');
-
-        $this->assertInstanceOf(Swaddle::class, $property);
-        $this->assertEquals(Swaddle::wrapArray([]), $property);
-    }
-
-    /**
      * Test that a stdClass property remains unaltered when retrieved from a non deep Swaddle.
      *
      * @covers liampm\Swaddle\Swaddle::getProperty()
@@ -128,18 +113,6 @@ class SwaddleTest extends TestCase
         $swaddle = Swaddle::wrapArray(['settings' => (object)['on' => true]], false);
 
         $this->assertEquals((object)['on' => true], $swaddle->getProperty('settings'));
-    }
-
-    /**
-     * Test that an array property remains unaltered when retrieved from a non deep Swaddle.
-     *
-     * @covers liampm\Swaddle\Swaddle::getProperty()
-     */
-    public function test_retrieving_array_property_in_non_deep_swaddle()
-    {
-        $swaddle = Swaddle::wrapArray(['settings' => ['on' => true]], false);
-
-        $this->assertEquals(['on' => true], $swaddle->getProperty('settings'));
     }
 
     /**
